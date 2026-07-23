@@ -1,0 +1,20 @@
+generated: '2026-07-18'
+method: searched
+source: live probes of https://www.backstory.ai/.well-known/*
+host: https://www.backstory.ai
+documents:
+- path: /.well-known/security.txt
+  status: 404
+- path: /.well-known/openid-configuration
+  status: 404
+- path: /.well-known/oauth-authorization-server
+  status: 404
+- path: /.well-known/api-catalog
+  status: 404
+- path: /.well-known/ai-plugin.json
+  status: 404
+notes: >-
+  No /.well-known discovery documents are published on the marketing host.
+  A /llms.txt is served (HTTP 200) and captured under llms/. Backstory has no
+  public developer/API surface at this time (product API is enterprise/partner
+  gated behind app.people.ai); revisit when an agent/MCP surface ships.

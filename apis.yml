@@ -1,8 +1,18 @@
 aid: backstory
 name: Backstory
-description: 'Backstory is a company surfaced as a portfolio company of iconiq-capital and added to the
-  API Evangelist network as a stub for enrichment. Sector: ai. This profile is a lead awaiting the enrichment
-  pipeline.'
+description: >-
+  Backstory (formerly People.ai, rebranded April 2026) is an AI revenue
+  intelligence platform for sales leaders, CROs, and revenue teams. It
+  automatically captures customer interactions across email, meetings, calls,
+  chat, and CRM records, maps that activity to open deals, and reconstructs
+  what is actually happening inside a deal or account — flagging which deals
+  are losing momentum, where decision-makers are missing, whether a forecast is
+  defensible, and the recommended next step. It integrates with Salesforce,
+  Microsoft Dynamics, Oracle, Gmail, Outlook, Zoom, Teams, and Slack without
+  requiring reps to change their workflow. Backstory is backed by ICONIQ
+  Capital, Andreessen Horowitz, and Lightspeed Venture Partners. It publishes
+  no public developer API today (the product API is enterprise/partner gated),
+  though it has stated an "open APIs and MCP" vision for agent workflows.
 url: https://raw.githubusercontent.com/api-evangelist/backstory/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -10,12 +20,30 @@ x-backed-by:
 - iconiq-capital
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-18'
+image: https://cdn.prod.website-files.com/69aab19e3344fee750b8721c/69bc218831a2d8ce7c69e9da_ab2eb85cd7fb357375e2a489f3bb519f_Backstory_OG.jpg
 tags:
 - Company
 - Ai
+- Revenue Intelligence
+- Sales
+- CRM
+- Sales Analytics
+- Forecasting
+- Revenue Operations
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -25,3 +53,24 @@ maintainers:
 common:
 - type: Website
   url: https://www.backstory.ai/
+- type: Blog
+  url: https://www.backstory.ai/newsroom
+- type: Login
+  url: https://app.people.ai/login/
+- type: PrivacyPolicy
+  url: https://www.backstory.ai/privacy
+- type: Support
+  url: mailto:support@backstory.ai
+- type: TrustCenter
+  url: https://www.backstory.ai/platform/trust-security
+- type: Compliance
+  url: https://www.backstory.ai/platform/trust-security
+- type: LLMsTxt
+  url: llms/backstory-llms.txt
+- type: DomainSecurity
+  url: security/backstory-domain-security.yml
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

@@ -1,0 +1,23 @@
+# Backstory (formerly People.ai)
+
+> Backstory is an AI revenue intelligence platform for sales leaders, CROs, and revenue teams. It automatically captures customer interactions across email, meetings, calls, chat, and CRM, maps that activity to open deals, and answers the questions revenue leaders actually ask — which deals are real, which are at risk, and what to do next. Rebranded from People.ai in April 2026. Backed by ICONIQ Capital, Andreessen Horowitz, and Lightspeed Venture Partners.
+
+Note: A verbatim full-content export is published at https://www.backstory.ai/llms.txt (~2.4 MB). This file is a curated summary. Backstory does not currently publish a public developer/API surface; the product API is enterprise/partner gated behind app.people.ai. The company has stated a vision of "open APIs and MCP" integration — revisit for a real developer surface.
+
+## Company
+- Website: https://www.backstory.ai/
+- Newsroom: https://www.backstory.ai/newsroom
+- Rebrand announcement: https://www.backstory.ai/newsroom/people-ai-becomes-backstory-redefining-how-revenue-teams-get-answers-about-their-deals
+- Sign in: https://app.people.ai/login/
+- Book a demo: https://www.backstory.ai/get-demo
+
+## Trust & Security
+- Trust & Security: https://www.backstory.ai/platform/trust-security
+- Privacy Policy: https://www.backstory.ai/privacy
+- Sub-processors: https://www.backstory.ai/product/sub-processors
+- Certifications: SOC 2, ISO 27001, ISO 27017, GDPR, CSA STAR
+- Security contact: security@backstory.ai
+
+## Integrations (product, not developer API)
+- CRM: Salesforce, Microsoft Dynamics, Oracle
+- Communication: Gmail, Outlook, Zoom, Microsoft Teams, Slack
