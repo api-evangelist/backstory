@@ -8,11 +8,15 @@ description: >-
   what is actually happening inside a deal or account — flagging which deals
   are losing momentum, where decision-makers are missing, whether a forecast is
   defensible, and the recommended next step. It integrates with Salesforce,
-  Microsoft Dynamics, Oracle, Gmail, Outlook, Zoom, Teams, and Slack without
-  requiring reps to change their workflow. Backstory is backed by ICONIQ
-  Capital, Andreessen Horowitz, and Lightspeed Venture Partners. It publishes
-  no public developer API today (the product API is enterprise/partner gated),
-  though it has stated an "open APIs and MCP" vision for agent workflows.
+  Microsoft Dynamics, Oracle, Gmail, Outlook, Zoom, Teams, Webex, and Slack
+  without requiring reps to change their workflow. Backstory's public developer
+  surface is agent-native rather than REST: it operates a hosted, remote MCP
+  server at https://mcp.people.ai/mcp with thirteen documented tools, protected
+  by OAuth 2.0 with PKCE and dynamic client registration, and documented for
+  Claude, ChatGPT, Microsoft Copilot, Gemini CLI and n8n. A separate REST API
+  exists but is documented only as admin-panel API key management, with no
+  published reference or specification. Backstory is backed by ICONIQ Capital,
+  Andreessen Horowitz, and Lightspeed Venture Partners.
 url: https://raw.githubusercontent.com/api-evangelist/backstory/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -33,7 +37,7 @@ accessModel:
   method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-18'
+modified: '2026-08-14'
 image: https://cdn.prod.website-files.com/69aab19e3344fee750b8721c/69bc218831a2d8ce7c69e9da_ab2eb85cd7fb357375e2a489f3bb519f_Backstory_OG.jpg
 tags:
 - Company
@@ -44,7 +48,48 @@ tags:
 - Sales Analytics
 - Forecasting
 - Revenue Operations
-apis: []
+- MCP
+- AI Agents
+apis:
+- name: Backstory MCP
+  description: >-
+    Backstory's hosted, remote Model Context Protocol server. It lets an AI
+    client query a customer's own Backstory revenue-intelligence data —
+    accounts, opportunities, recent activity, engaged people, scorecards,
+    company news, and SalesAI analysis — in natural language. Thirteen tools are
+    published across four families: finding accounts and opportunities,
+    strategic summaries, activity and engagement review, and advanced sales
+    analysis (including a beta Situation Search that returns historically
+    similar deals with the actions taken and the outcome). Authorization is
+    OAuth 2.0 authorization_code with PKCE and dynamic client registration; a
+    connected client inherits exactly the record permissions the authenticating
+    user already has in Backstory Engagement Dashboards and gains nothing more.
+  humanURL: https://www.backstory.ai/platform/mcp
+  baseURL: https://mcp.people.ai/mcp
+  tags:
+  - MCP
+  - AI Agents
+  - Revenue Intelligence
+  - CRM
+  properties:
+  - type: MCPServer
+    url: mcp/backstory-mcp.yml
+  - type: Documentation
+    url: https://help.backstory.ai/en/articles/15252736-backstory-mcp
+  - type: GettingStarted
+    url: https://help.backstory.ai/en/collections/19658946-mcp
+  - type: Authentication
+    url: authentication/backstory-authentication.yml
+  - type: OAuthScopes
+    url: scopes/backstory-scopes.yml
+  - type: ErrorCatalog
+    url: errors/backstory-problem-types.yml
+  - type: Conventions
+    url: conventions/backstory-conventions.yml
+  - type: RateLimits
+    url: rate-limits/backstory-rate-limits.yml
+  - type: AgentSkill
+    url: skills/_index.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -59,18 +104,64 @@ common:
   url: https://app.people.ai/login/
 - type: PrivacyPolicy
   url: https://www.backstory.ai/privacy
+- type: TermsOfService
+  url: https://www.backstory.ai/terms
+- type: Pricing
+  url: https://www.backstory.ai/pricing
 - type: Support
   url: mailto:support@backstory.ai
+- type: HelpCenter
+  url: https://help.backstory.ai/en/
+- type: Documentation
+  url: https://help.backstory.ai/en/
+- type: GettingStarted
+  url: https://help.backstory.ai/en/collections/19646748-get-started
+- type: GitHubOrganization
+  url: https://github.com/people-ai
 - type: TrustCenter
   url: https://www.backstory.ai/platform/trust-security
 - type: Compliance
   url: https://www.backstory.ai/platform/trust-security
+- type: StatusPage
+  url: https://status.backstory.ai/
+- type: ChangeLog
+  url: https://help.backstory.ai/en/articles/15252920-new-product-releases
+- type: ChangeLog
+  url: changelog/backstory-changelog.yml
+- type: Lifecycle
+  url: lifecycle/backstory-lifecycle.yml
+- type: MCPServer
+  url: mcp/backstory-mcp.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: Authentication
+  url: authentication/backstory-authentication.yml
+- type: OAuthScopes
+  url: scopes/backstory-scopes.yml
+- type: Conventions
+  url: conventions/backstory-conventions.yml
+- type: ErrorCatalog
+  url: errors/backstory-problem-types.yml
+- type: Conformance
+  url: conformance/backstory-conformance.yml
+- type: WellKnown
+  url: well-known/backstory-well-known.yml
+- type: Packages
+  url: packages/backstory-packages.yml
+- type: Components
+  url: components/backstory-components.yml
+- type: Plans
+  url: plans/backstory-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/backstory-rate-limits.yml
 - type: LLMsTxt
   url: llms/backstory-llms.txt
+- type: LLMsTxt
+  url: llms/backstory-help-llms.txt
 - type: DomainSecurity
   url: security/backstory-domain-security.yml
 x-enrichment:
-  date: '2026-07-19'
-  status: backfilled
+  date: '2026-08-14'
+  status: enriched
+  artifacts_added: 15
   pass: local-v1
-  note: backfilled from .gitignore signal + verified work evidence
