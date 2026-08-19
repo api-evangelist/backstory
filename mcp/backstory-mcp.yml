@@ -1,0 +1,184 @@
+generated: '2026-08-14'
+method: searched
+source: https://help.backstory.ai/en/articles/15252736-backstory-mcp
+status: published
+name: Backstory MCP
+description: >-
+  Backstory MCP is the provider's hosted, remote Model Context Protocol server.
+  It lets AI clients (Claude, ChatGPT, Microsoft Copilot, Google Gemini CLI, n8n
+  AI Agent nodes, or any custom MCP client) query a customer's own Backstory
+  revenue-intelligence data — accounts, opportunities, activity, engaged people,
+  scorecards and SalesAI analysis — in natural language. Access is per-user: the
+  server authorizes with the caller's own Backstory account and inherits exactly
+  the record permissions that user already has in Backstory Engagement
+  Dashboards. It grants no elevated access.
+deployment:
+  mode: remote
+  endpoint: https://mcp.people.ai/mcp
+  auth: oauth
+  verified: probed
+  note: >-
+    Endpoint verbatim from the provider's own client setup articles (Claude,
+    ChatGPT, n8n use https://mcp.people.ai/mcp; Microsoft Copilot and Gemini CLI
+    are documented with a trailing slash). Probed 2026-08-14: an unauthenticated
+    POST of tools/list returns HTTP 401 application/json with a WWW-Authenticate
+    Bearer challenge, so the server is live and OAuth-protected. The server's own
+    RFC 9728 protected-resource metadata names the canonical resource as
+    https://mcp.backstory.ai/mcp — mcp.people.ai and mcp.backstory.ai are the
+    same deployment (both 401 identically and both serve the same OAuth
+    metadata). No stdio/npx package is published by the provider.
+server:
+  name: backstory-mcp
+  transport: http
+  protocol: streamable-http
+  url: https://mcp.people.ai/mcp
+  canonical_resource: https://mcp.backstory.ai/mcp
+  alternate_hosts:
+  - https://mcp.backstory.ai/mcp
+authentication:
+  primary: oauth2
+  oauth:
+    issuer: https://mcp.backstory.ai/
+    authorization_endpoint: https://mcp.backstory.ai/authorize
+    token_endpoint: https://mcp.backstory.ai/token
+    registration_endpoint: https://mcp.backstory.ai/register
+    revocation_endpoint: https://mcp.backstory.ai/revoke
+    grant_types: [authorization_code, refresh_token]
+    code_challenge_methods: [S256]
+    scopes_supported: [claudeai]
+    dynamic_client_registration: true
+    source: https://mcp.backstory.ai/.well-known/oauth-authorization-server
+  programmatic:
+    style: header-credentials
+    headers:
+    - PAI-Client-Id
+    - PAI-Client-Secret
+    case_sensitive: true
+    note: >-
+      Documented for n8n's MCP Client node ("Multiple Headers Auth"). Client ID
+      and Client Secret are issued by a Backstory administrator or CSM on
+      request; the provider does not publish a self-service issuance flow.
+    source: https://help.backstory.ai/en/articles/15252917-connect-n8n-to-backstory
+  identity_providers:
+    note: >-
+      As of the August 2026 release, Backstory MCP authenticates with Backstory
+      credentials and no longer requires Salesforce credentials, so it works for
+      customers on other CRMs. Enterprise IdP pass-through (Okta, Entra ID) is
+      available on request via CSM/support.
+    source: https://help.backstory.ai/en/articles/15252920-new-product-releases
+access_requirements:
+  account: An active Backstory account (Data Foundation; SalesAI for analysis tools).
+  client_plans:
+  - Claude Pro, Team or Enterprise (custom connector added once by a Claude org admin)
+  - ChatGPT Plus or higher (Developer mode -> Add MCP Server, StreamingHTTP + OAuth)
+  - Microsoft Copilot Studio Enterprise (MCP tool, OAuth 2.0 dynamic discovery)
+  - Gemini CLI (`gemini mcp add pai https://mcp.people.ai/mcp/ -t http --scope user`)
+  - n8n 1.19.0+ (MCP Client tool on an AI Agent node)
+tools_source: >-
+  Tool names and descriptions are transcribed from the provider's "Backstory MCP"
+  help-centre article, which groups them into four families. The live tools/list
+  is OAuth-gated (HTTP 401 on an anonymous POST), so per-tool inputSchema could
+  not be captured and is NOT recorded here. Nothing below is inferred.
+tools:
+- name: Find Account
+  category: find-accounts-and-opportunities
+  description: >-
+    Searches Backstory for an account and returns matching records,
+    opportunities, and related CRM data.
+  example: Find TechCorp.
+- name: Find Record by CRM ID
+  category: find-accounts-and-opportunities
+  description: Resolves a CRM record ID directly to the corresponding account or opportunity.
+  example: Look up Salesforce ID 0018b00002XYZ.
+- name: Top Records
+  category: find-accounts-and-opportunities
+  description: >-
+    Returns the most relevant accounts and opportunities based on engagement,
+    ranking, filters, or admin-defined prioritization.
+  example: Which accounts should I focus on this week?
+- name: Account Status
+  category: strategic-summaries
+  description: >-
+    Generates a summary of risks, customer sentiment, key topics, and
+    recommended next steps for an account.
+  example: What's the health of the TechCorp account?
+- name: Opportunity Status
+  category: strategic-summaries
+  description: Provides a deal-level summary including risks, momentum, and suggested actions.
+  example: Where does the TechCorp renewal stand?
+- name: Scorecard
+  category: strategic-summaries
+  description: Retrieves Closeplan or qualification Scorecards, including questions and answers.
+  example: What are the MEDDICC answers for this deal?
+- name: Recent Account Activity
+  category: activity-and-engagement
+  description: Returns recent emails and meetings related to the account.
+  example: What happened with TechCorp in the last month?
+- name: Recent Opportunity Activity
+  category: activity-and-engagement
+  description: Returns communications and meetings associated with a specific opportunity.
+  example: Show recent activity for the TechCorp renewal opportunity.
+- name: Engaged People
+  category: activity-and-engagement
+  description: Identifies internal and external contacts involved in recent communications.
+  example: Who is actively engaged with TechCorp?
+- name: Account Company News
+  category: activity-and-engagement
+  description: Pulls insights from earnings calls, SEC filings, and public company reporting.
+  example: What's happening with TechCorp lately?
+- name: Ask Sales AI About Account
+  category: advanced-sales-analysis
+  description: >-
+    Uses CRM data, activity history, engagement, and scorecards to answer
+    account-level questions.
+  example: Why is the TechCorp account at risk?
+- name: Ask Sales AI About Opportunity
+  category: advanced-sales-analysis
+  description: Provides opportunity-specific analysis using the full deal context.
+  example: What's blocking this deal?
+- name: Situation Search
+  category: advanced-sales-analysis
+  status: beta
+  description: >-
+    Takes a described issue or challenge, builds a situational profile from the
+    deal's activity, and returns up to four of the most similar historical
+    opportunities in the organization, ranked by similarity, with deal
+    attributes, actions taken and the outcome.
+  example: How have we handled objections like these in the past?
+tool_count: 13
+x-evidence:
+- fetched: '2026-08-14'
+  url: https://mcp.people.ai/mcp
+  method: POST tools/list (anonymous)
+  http_status: 401
+  content_type: application/json
+  body: '{"error": "invalid_token", "error_description": "No bearer token or client credentials were provided.", "error_code": "missing_credentials", "error_reason": "missing_authorization"}'
+- fetched: '2026-08-14'
+  url: https://mcp.backstory.ai/mcp
+  method: POST tools/list (anonymous)
+  http_status: 401
+  content_type: application/json
+- fetched: '2026-08-14'
+  url: https://mcp.backstory.ai/.well-known/oauth-authorization-server
+  http_status: 200
+  content_type: application/json
+- fetched: '2026-08-14'
+  url: https://mcp.backstory.ai/.well-known/oauth-protected-resource/mcp
+  http_status: 200
+  content_type: application/json
+docs:
+  overview: https://help.backstory.ai/en/articles/15252736-backstory-mcp
+  collection: https://help.backstory.ai/en/collections/19658946-mcp
+  marketing: https://www.backstory.ai/platform/mcp
+  clients:
+    claude: https://help.backstory.ai/en/articles/15252710-connect-claude-to-backstory
+    chatgpt: https://help.backstory.ai/en/articles/13781010-connect-chatgpt-to-backstory
+    copilot: https://help.backstory.ai/en/articles/15252744-connect-microsoft-copilot-to-backstory
+    gemini_cli: https://help.backstory.ai/en/articles/15252790-connect-gemini-cli-to-backstory
+    n8n: https://help.backstory.ai/en/articles/15252917-connect-n8n-to-backstory
+notes: >-
+  No OpenAPI, GraphQL SDL, AsyncAPI or A2A agent card was found for Backstory on
+  any host probed (see well-known/backstory-well-known.yml). MCP is currently the
+  provider's only machine-callable public surface; the separate Backstory REST
+  API exists but is documented only as admin-panel API key/secret management,
+  with no published reference or base URL.

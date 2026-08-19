@@ -1,0 +1,92 @@
+generated: '2026-08-14'
+method: searched
+source: https://help.backstory.ai/en/articles/15252736-backstory-mcp
+docs: https://help.backstory.ai/en/collections/19658946-mcp
+note: >-
+  Derived from the provider's own help-centre documentation plus live
+  unauthenticated probes of the MCP host. There is no OpenAPI for Backstory, so
+  none of this comes from a securitySchemes block — every scheme below was read
+  off a published setup article or an observed HTTP response.
+summary:
+  types: [oauth2, apiKey, http]
+  api_key_in: [header]
+  oauth2_flows: [authorizationCode]
+  dynamic_client_registration: true
+  pkce: required
+schemes:
+- name: backstory-mcp-oauth2
+  type: oauth2
+  applies_to: Backstory MCP (https://mcp.people.ai/mcp)
+  flows:
+  - flow: authorizationCode
+    issuer: https://mcp.backstory.ai/
+    authorizationUrl: https://mcp.backstory.ai/authorize
+    tokenUrl: https://mcp.backstory.ai/token
+    revocationUrl: https://mcp.backstory.ai/revoke
+    registrationUrl: https://mcp.backstory.ai/register
+    grant_types: [authorization_code, refresh_token]
+    code_challenge_methods: [S256]
+    token_endpoint_auth_methods: [client_secret_post, client_secret_basic]
+    scopes:
+      claudeai: >-
+        The only scope advertised in the server's RFC 8414 metadata. The
+        provider publishes no scope reference; per the docs, authorization is
+        not scope-shaped at all — a token inherits the signing-in user's own
+        Backstory record permissions.
+  bearer_methods: [header]
+  sources:
+  - https://mcp.backstory.ai/.well-known/oauth-authorization-server
+  - https://mcp.backstory.ai/.well-known/oauth-protected-resource/mcp
+  - https://help.backstory.ai/en/articles/15252710-connect-claude-to-backstory
+- name: pai-client-credentials
+  type: apiKey
+  in: header
+  names: [PAI-Client-Id, PAI-Client-Secret]
+  case_sensitive: true
+  applies_to: Backstory MCP, programmatic clients (documented for n8n)
+  issuance: >-
+    Issued on request by a Backstory administrator or Customer Success Manager.
+    No self-service issuance is documented.
+  sources:
+  - https://help.backstory.ai/en/articles/15252917-connect-n8n-to-backstory
+- name: backstory-rest-api-key
+  type: apiKey
+  applies_to: Backstory REST API
+  issuance: >-
+    Backstory administrators generate, pause and revoke API key/secret pairs on
+    the API Keys page of the Backstory Admin Panel; a maximum of five active
+    pairs per organization. The transport, header name and base URL for the REST
+    API are not published — the help centre documents key lifecycle only.
+  in: unknown
+  sources:
+  - https://help.backstory.ai/en/articles/15252717-api-key-management
+- name: salesforce-sso-saml
+  type: http
+  scheme: sso
+  applies_to: Backstory web application and Salesforce-embedded surfaces
+  note: >-
+    The product application authenticates through Salesforce OAuth/SSO and
+    honours the customer's SAML IdP (Okta documented). As of the August 2026
+    release, Backstory MCP no longer requires Salesforce credentials and accepts
+    Backstory credentials directly; enterprise IdP pass-through (Okta, Entra ID)
+    is available on request.
+  sources:
+  - https://help.backstory.ai/en/articles/15252780-single-sign-on
+  - https://help.backstory.ai/en/articles/15252889-common-security-and-privacy-questions
+  - https://help.backstory.ai/en/articles/15252920-new-product-releases
+authorization_model:
+  style: user-permission-inheritance
+  description: >-
+    Backstory MCP grants no privileges of its own. A connected AI client can read
+    exactly the accounts, opportunities, activities and other records the
+    authenticating user can already see in Backstory Engagement Dashboards;
+    administrators control that through User Access / Object Visibility settings.
+  source: https://help.backstory.ai/en/articles/15252736-backstory-mcp
+observed_challenge:
+  url: https://mcp.people.ai/mcp
+  http_status: 401
+  www_authenticate: >-
+    Bearer error="invalid_token", error_description="Authentication failed. The
+    provided bearer token is invalid, expired, or no longer recognized by the
+    server...", resource_metadata="https://mcp.backstory.ai/.well-known/oauth-protected-resource/mcp"
+  fetched: '2026-08-14'

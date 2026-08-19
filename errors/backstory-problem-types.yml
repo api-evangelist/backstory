@@ -1,0 +1,80 @@
+generated: '2026-08-14'
+method: probed
+source: live anonymous POST to https://mcp.people.ai/mcp and https://mcp.backstory.ai/mcp
+format: custom-json
+rfc9457: false
+note: >-
+  Backstory publishes no OpenAPI and no error reference page, so this catalog is
+  not derived from a spec. It records only error responses actually observed on
+  the live MCP endpoint without credentials. Any error behind authentication is
+  unrecorded — that is a gap, not an assertion that none exist.
+envelope:
+  content_type: application/json
+  fields:
+  - name: error
+    description: Short machine token for the error class.
+  - name: error_description
+    description: Human-readable explanation, including remediation guidance.
+  - name: error_code
+    description: More specific machine token for the failure mode.
+  - name: error_reason
+    description: Machine token for the underlying cause.
+  challenge_header: WWW-Authenticate
+problems:
+- status: 401
+  error: invalid_token
+  error_code: missing_credentials
+  error_reason: missing_authorization
+  title: No bearer token or client credentials were provided
+  detail: >-
+    Returned when an MCP request reaches https://mcp.people.ai/mcp (or
+    https://mcp.backstory.ai/mcp) with no Authorization bearer token and no
+    PAI-Client-Id / PAI-Client-Secret headers.
+  remediation: >-
+    Complete the OAuth authorization_code + PKCE flow against
+    https://mcp.backstory.ai/authorize, or send the PAI-Client-Id and
+    PAI-Client-Secret headers issued by a Backstory administrator.
+  www_authenticate: >-
+    Bearer error="invalid_token", resource_metadata="https://mcp.backstory.ai/.well-known/oauth-protected-resource/mcp"
+  observed: '2026-08-14'
+- status: 401
+  error: invalid_token
+  title: Bearer token is invalid, expired, or no longer recognized
+  detail: >-
+    Advertised in the WWW-Authenticate challenge the server returns on every
+    unauthorized request. The description tells the client to clear its stored
+    tokens, reconnect, and re-register.
+  remediation: >-
+    Clear authentication tokens in the MCP client and reconnect; the client
+    should re-register via the dynamic client registration endpoint and obtain
+    new tokens. Backstory's own FAQ notes most users re-authenticate every few
+    weeks as tokens expire.
+  observed: '2026-08-14'
+- status: 404
+  title: Not Found
+  detail: >-
+    Returned as text/plain by the MCP host for any path other than /mcp and the
+    two /.well-known OAuth documents (for example /sse, /openapi.json, /llms.txt).
+  observed: '2026-08-14'
+- status: 405
+  title: Method Not Allowed
+  detail: >-
+    Returned as text/plain when the /.well-known OAuth metadata documents are
+    requested with POST instead of GET.
+  observed: '2026-08-14'
+documented_failure_modes:
+  note: >-
+    The provider's client-setup FAQs describe these failure modes in prose
+    without publishing status codes or error tokens for them.
+  items:
+  - Connection failed / server not responding — usually a wrong endpoint URL or a
+    mis-cased header name (PAI-Client-Id, PAI-Client-Secret are case-sensitive).
+  - Authentication failed / invalid credentials — wrong or whitespace-padded
+    Client ID or Client Secret.
+  - '"Cannot find my account data" — the record does not exist in the tenant, or
+    the authenticating user lacks permission to view it; MCP inherits Engagement
+    Dashboards permissions and never widens them.'
+  sources:
+  - https://help.backstory.ai/en/articles/15252917-connect-n8n-to-backstory
+  - https://help.backstory.ai/en/articles/13781010-connect-chatgpt-to-backstory
+  - https://help.backstory.ai/en/articles/15252736-backstory-mcp

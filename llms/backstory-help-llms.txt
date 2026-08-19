@@ -1,0 +1,176 @@
+# Backstory All Rights Reserved
+
+> How can we help?
+
+## Get Started
+
+- [Introduction to Backstory](https://help.backstory.ai/en/articles/15252894-introduction-to-backstory.md): Learn what Backstory does and how its features work together.
+- [New Product Releases](https://help.backstory.ai/en/articles/15252920-new-product-releases.md): Discover new features built to streamline your workflow.
+- [Create Your Backstory Account](https://help.backstory.ai/en/articles/15252712-create-your-backstory-account.md): Activate your account to start using Backstory.
+- [Install the Backstory Chrome Extension](https://help.backstory.ai/en/articles/16102063-install-the-backstory-chrome-extension.md): Access the Backstory App menu when you start Chrome or open a new tab.
+- [Backstory Support Services](https://help.backstory.ai/en/articles/15252776-backstory-support-services.md): Find the right support channel for your question or issue.
+- [Download a HAR File](https://help.backstory.ai/en/articles/15252824-download-a-har-file.md): Record and share your browser's network activity with Backstory Support.
+
+## Activity Capture
+
+- [Automatic Activity Capture and Filtering](https://help.backstory.ai/en/articles/15252793-automatic-activity-capture-and-filtering.md): Backstory captures your sales activity while protecting sensitive content.
+- [Automatic Activity Matching](https://help.backstory.ai/en/articles/15252874-automatic-activity-matching.md): How Backstory matches your sales activities to the correct CRM records.
+- [Automatic Contact Creation](https://help.backstory.ai/en/articles/15252803-automatic-contact-creation.md): Backstory detects new contacts from emails and meetings and creates them automatically.
+- [Review, Edit, and Troubleshoot Captured Activities](https://help.backstory.ai/en/articles/15252765-review-edit-and-troubleshoot-captured-activities.md): Monitor your captured activities and correct any matching errors.
+- [Adjust Activity Filters with the Engagement Log](https://help.backstory.ai/en/articles/15538457-adjust-activity-filters-with-the-engagement-log.md): Review the activities Backstory has synced to your CRM and apply filters if necessary.
+- [CRM Activity Sources](https://help.backstory.ai/en/articles/15252845-crm-activity-sources.md): Pull custom activity data from standard Salesforce objects into Backstory.
+- [CSV Enrichment](https://help.backstory.ai/en/articles/15252802-csv-enrichment.md)
+- [Email and Calendar Exclusions](https://help.backstory.ai/en/articles/15252887-email-and-calendar-exclusions.md)
+- [CRM Pull Exclusions](https://help.backstory.ai/en/articles/15252896-crm-pull-exclusions.md)
+- [CRM Push Exclusions](https://help.backstory.ai/en/articles/15252715-crm-push-exclusions.md)
+- [External ID Mapping](https://help.backstory.ai/en/articles/15252745-external-id-mapping.md): Connect a Backstory user to their CRM user when automatic matching fails.
+- [Email Bounceback Detection](https://help.backstory.ai/en/articles/15252912-email-bounceback-detection.md): Detect bounced emails and update contact status in Salesforce automatically.
+- [Multiple Account Domain Support](https://help.backstory.ai/en/articles/15252721-multiple-account-domain-support.md): Capture every activity from accounts that use more than one email domain.
+- [Multi-Opportunity Matching](https://help.backstory.ai/en/articles/15252773-multi-opportunity-matching.md): Link a single activity to multiple related Opportunities within one Account.
+- [Automated Lead Conversion](https://help.backstory.ai/en/articles/15494790-automated-lead-conversion.md)
+- [Task and Event Type Fields in Salesforce](https://help.backstory.ai/en/articles/15252831-task-and-event-type-fields-in-salesforce.md)
+- [Custom Title Classification](https://help.backstory.ai/en/articles/15252836-custom-title-classification.md): Tailor how Backstory sorts your contacts by department and seniority.
+- [Data Security and Privacy](https://help.backstory.ai/en/articles/15252823-data-security-and-privacy.md)
+- [Request Data Erasure Under GDPR](https://help.backstory.ai/en/articles/15252797-request-data-erasure-under-gdpr.md): Submit a verified request to remove a data subject's personal data from Backstory.
+- [Backstory GDPR Compliance](https://help.backstory.ai/en/articles/8834216-backstory-gdpr-compliance.md): Details about how Backstory complies with GDPR measures
+- [Webinar: Matching 101](https://help.backstory.ai/en/articles/15252911-webinar-matching-101.md): Learn about Backstory's score-based matching algorithm.
+
+## Backstory Platform
+
+- [Account 360 and Opportunity 360](https://help.backstory.ai/en/articles/15252865-account-360-and-opportunity-360.md): View the full backstory of your Account or Opportunity all on one page.
+- [Signals](https://help.backstory.ai/en/articles/15252711-signals.md): Get direct, actionable sales insights at your fingertips with Signals!
+- [Multi-Language Support](https://help.backstory.ai/en/articles/15252873-multi-language-support.md)
+- [Engagement Dashboards Overview](https://help.backstory.ai/en/articles/15252899-engagement-dashboards-overview.md)
+- [Engagement Dashboards: Tables](https://help.backstory.ai/en/articles/15252856-engagement-dashboards-tables.md)
+- [Cell Drill-In](https://help.backstory.ai/en/articles/15252839-cell-drill-in.md)
+- [Engagement Metrics](https://help.backstory.ai/en/articles/15252777-engagement-metrics.md)
+- [Person Metrics](https://help.backstory.ai/en/articles/15949689-person-metrics.md)
+- [Out-of-the-Box Dashboards](https://help.backstory.ai/en/articles/15252890-out-of-the-box-dashboards.md)
+- [Multi-Measure Charts and KPIs](https://help.backstory.ai/en/articles/15252908-multi-measure-charts-and-kpis.md): Unlock Deeper Insights with Multi-Measure Charts and KPIs!
+- [Trends](https://help.backstory.ai/en/articles/15252753-trends.md): Learn how to leverage Backstory's Trends within Engagement Dashboards to transform past data into actionable insights for future success.
+- [Measure What Matters Webinar](https://help.backstory.ai/en/articles/15252918-measure-what-matters-webinar.md): Master Engagement Dashboards in Backstory.
+- [Creating and Customizing Sheets](https://help.backstory.ai/en/articles/15252921-creating-and-customizing-sheets.md)
+- [My Meetings](https://help.backstory.ai/en/articles/16397792-my-meetings.md): Prepare for upcoming meetings and review past ones from a single in-app view.
+- [Creating and Updating CRM Records](https://help.backstory.ai/en/articles/15252859-creating-and-updating-crm-records.md): Creating and updating CRM records within Unified Backstory Application
+- [Troubleshooting Sheets](https://help.backstory.ai/en/articles/15252740-troubleshooting-sheets.md): Troubleshooting common issues with Sheets
+- [Mirror Account Fields to the Opportunity](https://help.backstory.ai/en/articles/15252741-mirror-account-fields-to-the-opportunity.md)
+- [Signals Webinar](https://help.backstory.ai/en/articles/15252791-signals-webinar.md)
+- [Webinar: Level Up Your GTM AI Maturity](https://help.backstory.ai/en/articles/15324889-webinar-level-up-your-gtm-ai-maturity.md): Understand where your go-to-market org sits on the AI maturity curve — and what it takes to move forward.
+
+## Forecasting
+
+- [Backstory Forecasting](https://help.backstory.ai/en/articles/15252915-backstory-forecasting.md): Predict revenue, spot deal risks, and track pipeline changes across your organization.
+- [Weekly Forecast Trends Email](https://help.backstory.ai/en/articles/16399980-weekly-forecast-trends-email.md): Spot forecast risk early without logging into Backstory.
+- [Pipeline Changes](https://help.backstory.ai/en/articles/15252598-pipeline-changes.md): Visualize changes in your pipeline and understand what’s driving them.
+- [Forecast Headlines](https://help.backstory.ai/en/articles/15252882-forecast-headlines.md): Automatically surface prevalent risks in your forecast before they impact results.
+- [Create a Forecast Type](https://help.backstory.ai/en/articles/15252119-create-a-forecast-type.md): Set up custom forecasting views to track revenue and key metrics your way.
+- [Forecast Hierarchy Management](https://help.backstory.ai/en/articles/15252913-forecast-hierarchy-management.md)
+- [Webinar: Forecasting Best Practices](https://help.backstory.ai/en/articles/15324887-webinar-forecasting-best-practices.md): Modernize your forecasting motion with data-driven signals and proactive deal management.
+
+## ClosePlan
+
+- [Introduction to ClosePlan](https://help.backstory.ai/en/articles/15252879-introduction-to-closeplan.md): An introduction to ClosePlan features
+- [Plan to Win: Mastering ClosePlan Webinar](https://help.backstory.ai/en/articles/15252766-plan-to-win-mastering-closeplan-webinar.md): Improve forecast accuracy, deal quality, and coaching effectiveness with Backstory.
+- [ClosePlan ROI Overview Dashboard](https://help.backstory.ai/en/articles/15252828-closeplan-roi-overview-dashboard.md): Quantify ClosePlan’s impact on sales performance with built-in ROI analytics.
+- [ClosePlan & Engagement Dashboards by Backstory](https://help.backstory.ai/en/articles/15252708-closeplan-engagement-dashboards-by-backstory.md)
+- [ClosePlan Account Plans](https://help.backstory.ai/en/articles/15538984-closeplan-account-plans.md): Empower sales teams to align, organize, and strategically manage key accounts throughout the entire account lifecycle.
+- [Account Plan Export](https://help.backstory.ai/en/articles/15252907-account-plan-export.md): Learn how to export and customize an Account Plan to easily share with others.
+- [Whitespace Maps Overview](https://help.backstory.ai/en/articles/15252875-whitespace-maps-overview.md): Whitespace maps visualize your current and potential market share within an Account, enabling you to identify new business opportunities.
+- [Managing Business Units in Whitespace Maps](https://help.backstory.ai/en/articles/15252799-managing-business-units-in-whitespace-maps.md): Learn how to customize your whitespace map to match the structure of the business you are selling into.
+- [Scorecards](https://help.backstory.ai/en/articles/15252787-scorecards.md): Utilizing Scorecards in Unified Backstory Application!
+- [Opportunity Scorecard Overview](https://help.backstory.ai/en/articles/15252800-opportunity-scorecard-overview.md): Learn how to use opportunity scorecards in to track the progress of deals, identify risks and next steps, and ultimately increase win rates.
+- [Coaching with Opportunity Scorecards](https://help.backstory.ai/en/articles/15252784-coaching-with-opportunity-scorecards.md): Discover how to use Opportunity Scorecards to standardize your qualification process. Learn how to up-level your team's Deal Qualification.
+- [Opportunity Scorecard - Best Practices](https://help.backstory.ai/en/articles/15252909-opportunity-scorecard-best-practices.md): Learn best practices for building Backstory ClosePlan scorecards to increase user adoption, improve reporting and enhance response quality.
+- [Executing your Account Strategy](https://help.backstory.ai/en/articles/15252706-executing-your-account-strategy.md): Learn how to use Salesforce tasks to track progress on your account strategy and stay aligned with your team.
+- [Engagement Dashboards by Backstory: Coaching with Opportunity & Account Scorecards](https://help.backstory.ai/en/articles/15252786-engagement-dashboards-by-backstory-coaching-with-opportunity-account-scorecards.md): Learn how to use data to track sales progress, forecast future sales, and coach sales representatives.
+- [Playbooks Strategy & Mutual Action Plans](https://help.backstory.ai/en/articles/15252735-playbooks-strategy-mutual-action-plans.md): Learn how to use a Playbook checklist to create and share a mutual action plan with your customer, improving your chances of closing deals.
+- [Coaching with Playbooks](https://help.backstory.ai/en/articles/15252903-coaching-with-playbooks.md): Learn how Sales Leaders can use Playbooks to gain insight into their Reps' activities and coach them to close deals faster.
+- [Visualizing the Impact of Delays](https://help.backstory.ai/en/articles/15252758-visualizing-the-impact-of-delays.md): Learn how to use Gantt charts in Backstory to visualize the impact of delays on the sales process and keep deals moving forward.
+- [Relationship Maps](https://help.backstory.ai/en/articles/15252747-relationship-maps.md)
+- [Importing an Existing Relationship Map](https://help.backstory.ai/en/articles/15252732-importing-an-existing-relationship-map.md): Discover how to import an existing relationship map to either an Account or Opportunity record.
+- [Smart Stakeholder Cards with Data Foundation](https://help.backstory.ai/en/articles/15252785-smart-stakeholder-cards-with-data-foundation.md): Leverage Smart Stakeholder Cards to gain insights into contact engagement, connections, opportunities and more.
+- [Account Plan Export: Configuring Presets](https://help.backstory.ai/en/articles/15252703-account-plan-export-configuring-presets.md): Create account plan export presets, allowing you to define what information is included or excluded when account plans are exported.
+- [Importing Scorecard Templates](https://help.backstory.ai/en/articles/15252713-importing-scorecard-templates.md): Learn how to import a ClosePlan template into Salesforce.
+- [Whitespace Maps: Creating and Editing a Whitespace Template](https://help.backstory.ai/en/articles/15252742-whitespace-maps-creating-and-editing-a-whitespace-template.md): Learn how to configure whitespace maps, which track product lines, business units, statuses, and metrics in your organization.
+- [Whitespace Map Bulk Upload](https://help.backstory.ai/en/articles/15252751-whitespace-map-bulk-upload.md): Learn how Amins can import whitespace maps via CSV into Salesforce, auto-populating account plans and reducing manual work for sellers.
+- [Overview: Creating & Editing Account Plan Templates](https://help.backstory.ai/en/articles/15252754-overview-creating-editing-account-plan-templates.md): Learn how to create and manage account plan templates, including editing, filtering, and activating.
+- [Copying Closeplan Templates between Salesforce Instances](https://help.backstory.ai/en/articles/15252755-copying-closeplan-templates-between-salesforce-instances.md): Learn how to export and import closed plan templates between Salesforce instances.
+- [Using the Field Link Question Type](https://help.backstory.ai/en/articles/15252783-using-the-field-link-question-type.md): Reference key opportunity fields on your scorecard to eliminate duplicate work and incentivize reps to complete key fields.
+- [Enabling Closeplan Integration with Engagement Dashboards by Backstory](https://help.backstory.ai/en/articles/15252796-enabling-closeplan-integration-with-engagement-dashboards-by-backstory.md)
+- [Updating Existing Opportunities to a New Template Version](https://help.backstory.ai/en/articles/15252807-updating-existing-opportunities-to-a-new-template-version.md): Learn how to upgrade opportunity templates by selecting source and target templates, confirming changes, and starting the upgrade.
+- [Initiatives: Adding Custom Fields](https://help.backstory.ai/en/articles/15252818-initiatives-adding-custom-fields.md): Understand how Admins can add custom fields to track Account Plan Initiatives, which can later be converted into Opportunities.
+- [Relationship Map Templates](https://help.backstory.ai/en/articles/15252833-relationship-map-templates.md)
+- [Auto-deploy Closeplan Templates](https://help.backstory.ai/en/articles/15252838-auto-deploy-closeplan-templates.md): Use Salesforce Flows to automatically create ClosePlan records and save users time while ensuring that scorecards are prioritized.
+- [Account Scorecards: Creating and Editing Account Plan Templates](https://help.backstory.ai/en/articles/15252841-account-scorecards-creating-and-editing-account-plan-templates.md): Learn how to create an account scorecard template, including defining categories, adding questions, and configuring scoring tiers.
+- [Setting Filters for Templates](https://help.backstory.ai/en/articles/15252843-setting-filters-for-templates.md): Learn how to use filter criteria to automatically deploy templates based on specific opportunity details, such as opportunity type & amount.
+- [Playbooks: Creating and Editing a Playbook Template](https://help.backstory.ai/en/articles/15252846-playbooks-creating-and-editing-a-playbook-template.md): Discover how to edit, add, and configure the events within a playbook template.
+- [Playbooks: Setting Dependencies](https://help.backstory.ai/en/articles/15252848-playbooks-setting-dependencies.md): Learn how to set dependencies between events in playbook templates using either the dependencies tab or the Gantt chart view.
+- [Assigning Licenses](https://help.backstory.ai/en/articles/15252850-assigning-licenses.md): Learn how to manage Closeplan user access, including assigning licenses to individuals and groups and editing group permissions.
+- [Managing Existing Templates & Creating New Versions](https://help.backstory.ai/en/articles/15252861-managing-existing-templates-creating-new-versions.md): Understand how to manage templates, including editing, deleting, creating new versions, and archiving old versions.
+- [Adding Manager Validation Questions to your Scorecard Template](https://help.backstory.ai/en/articles/15252891-adding-manager-validation-questions-to-your-scorecard-template.md): Understand how to use manager validation questions in opportunity scorecards to ensure completion and quality inputs.
+- [Using Picklist-type questions in your Scorecard Template](https://help.backstory.ai/en/articles/15252902-using-picklist-type-questions-in-your-scorecard-template.md): Improve the quality of responses and reporting by using picklist-type questions instead of open-ended questions in your template.
+- [Add ClosePlan Links in Salesforce](https://help.backstory.ai/en/articles/15252746-add-closeplan-links-in-salesforce.md): Add clickable links to ClosePlan Relationship Maps and Account Plans directly on your Salesforce account and opportunity records.
+
+## MCP
+
+- [Connect Claude to Backstory](https://help.backstory.ai/en/articles/15252710-connect-claude-to-backstory.md): Access your Backstory sales intelligence directly in Claude.
+- [Connect ChatGPT to Backstory](https://help.backstory.ai/en/articles/13781010-connect-chatgpt-to-backstory.md): Access your Backstory sales data directly in ChatGPT for instant insights.
+- [Connect n8n to Backstory](https://help.backstory.ai/en/articles/15252917-connect-n8n-to-backstory.md): Build intelligent sales automation workflows by connecting n8n AI agents to your Backstory data.
+- [Connect Gemini CLI to Backstory](https://help.backstory.ai/en/articles/15252790-connect-gemini-cli-to-backstory.md): Access your Backstory sales intelligence directly in Gemini CLI for instant insights.
+- [Connect Microsoft Copilot to Backstory](https://help.backstory.ai/en/articles/15252744-connect-microsoft-copilot-to-backstory.md): Access your Backstory sales data directly in Microsoft Copilot for instant insights.
+- [Backstory MCP](https://help.backstory.ai/en/articles/15252736-backstory-mcp.md): Connect AI clients to your live Backstory data.
+
+## Administration
+
+- [Admin Panel Page Directory](https://help.backstory.ai/en/articles/15252719-admin-panel-page-directory.md)
+- [Single Sign On](https://help.backstory.ai/en/articles/15252780-single-sign-on.md): Configure SAML-based SSO for your organization.
+- [Domains](https://help.backstory.ai/en/articles/15252895-domains.md): View your organization's list of internal email domains.
+- [General Settings](https://help.backstory.ai/en/articles/15252810-general-settings.md): Customize how your Backstory environments are identified upon login.
+- [Users and Teams](https://help.backstory.ai/en/articles/15252771-users-and-teams.md): Manage your users and team hierarchy manually or automatically.
+- [Configuration Profiles](https://help.backstory.ai/en/articles/15252704-configuration-profiles.md): Create and manage profiles that control activity data intake and matching.
+- [User Settings Rules](https://help.backstory.ai/en/articles/15252714-user-settings-rules.md): Automatically assign settings to new users created via Automatic Mode.
+- [Custom Teams](https://help.backstory.ai/en/articles/15252723-custom-teams.md): Create user groupings outside of the standard role hierarchy.
+- [Manage Executive Users](https://help.backstory.ai/en/articles/15252730-manage-executive-users.md): Control how your executives' activity data is captured and displayed.
+- [Manage Users via CSV Upload](https://help.backstory.ai/en/articles/15252852-manage-users-via-csv-upload.md): Add or update large numbers of users at once.
+- [Manual Team Manager Assignment](https://help.backstory.ai/en/articles/15252892-manual-team-manager-assignment.md): Manually assign team managers even when Automatic Mode is enabled.
+- [Record Selection](https://help.backstory.ai/en/articles/15252738-record-selection.md): Choose which CRM records are enabled for SalesAI.
+- [CRM Scan](https://help.backstory.ai/en/articles/15252720-crm-scan.md)
+- [Business Impact](https://help.backstory.ai/en/articles/15252752-business-impact.md)
+- [CRM Impact](https://help.backstory.ai/en/articles/15252772-crm-impact.md)
+
+## Integrations
+
+- [Action Required for Existing Customers: Install the New Backstory Managed Package in Salesforce](https://help.backstory.ai/en/articles/15589671-action-required-for-existing-customers-install-the-new-backstory-managed-package-in-salesforce.md): Install the new managed Package to keep your Salesforce integration running.
+- [Salesforce Integration](https://help.backstory.ai/en/articles/15252924-salesforce-integration.md): This article provides installation and configuration guidance to configure Backstory inside Salesforce.
+- [Salesforce Integration User Permissions](https://help.backstory.ai/en/articles/15252897-salesforce-integration-user-permissions.md)
+- [Map a Custom Salesforce Field to Backstory](https://help.backstory.ai/en/articles/15484299-map-a-custom-salesforce-field-to-backstory.md): Connect a custom Salesforce field to Backstory so its data appears in-app.
+- [Oracle Sales Cloud Integration](https://help.backstory.ai/en/articles/15656818-oracle-sales-cloud-integration.md)
+- [Uninstalling the Backstory Salesforce Managed Package](https://help.backstory.ai/en/articles/15657122-uninstalling-the-backstory-salesforce-managed-package.md): Instructions for uninstallation
+- [Troubleshooting: Common Salesforce Error Messages](https://help.backstory.ai/en/articles/15252707-troubleshooting-common-salesforce-error-messages.md)
+- [Creating “Your Backstory” app page for Manager and Sales Rep Components](https://help.backstory.ai/en/articles/15252725-creating-your-backstory-app-page-for-manager-and-sales-rep-components.md)
+- [Configure Security Settings for the Backstory Integration](https://help.backstory.ai/en/articles/15252733-configure-security-settings-for-the-backstory-integration.md): A guide for security administrators to configure Backstory.
+- [Common Permissions Errors](https://help.backstory.ai/en/articles/15252801-common-permissions-errors.md): Common permission errors that users may encounter
+- [Comply with New Salesforce Policies for Connected App Access](https://help.backstory.ai/en/articles/15252854-comply-with-new-salesforce-policies-for-connected-app-access.md): Fix the Salesforce OAuth errors for Backstory Connected Apps.
+- [Fields Backstory Updates in Salesforce](https://help.backstory.ai/en/articles/15252864-fields-backstory-updates-in-salesforce.md)
+- [Add Sheets to Salesforce](https://help.backstory.ai/en/articles/15252885-add-sheets-to-salesforce.md)
+- [Backstory Salesforce Managed Package Overview](https://help.backstory.ai/en/articles/15252916-backstory-salesforce-managed-package-overview.md): Information regarding the Backstory Managed Package with Salesforce
+- [Microsoft Dynamics Integration](https://help.backstory.ai/en/articles/15324890-microsoft-dynamics-integration.md)
+- [LinkedIn Sales Navigator Integration](https://help.backstory.ai/en/articles/15252729-linkedin-sales-navigator-integration.md): See LinkedIn messages and InMails alongside your other engagement data.
+- [Slackbot for Meeting Categorization](https://help.backstory.ai/en/articles/15252737-slackbot-for-meeting-categorization.md): Learn how to set up Slackbot to categorize meetings and sync information back to your CRM.
+- [Connecting Backstory and G Suite](https://help.backstory.ai/en/articles/15252750-connecting-backstory-and-g-suite.md)
+- [Connecting Backstory and Zoom](https://help.backstory.ai/en/articles/15252762-connecting-backstory-and-zoom.md)
+- [Microsoft Teams Integration](https://help.backstory.ai/en/articles/15252829-microsoft-teams-integration.md): Connect Backstory to Microsoft Teams to ingest meeting transcripts.
+- [Integration with Cadence Tools](https://help.backstory.ai/en/articles/15252830-integration-with-cadence-tools.md)
+- [Gong Integration](https://help.backstory.ai/en/articles/15252834-gong-integration.md)
+- [Microsoft 365 Integration](https://help.backstory.ai/en/articles/15252844-microsoft-365-integration.md): Integrate your Microsoft Office 365 email and calendar with Backstory.
+- [Connecting Backstory and Webex](https://help.backstory.ai/en/articles/15252847-connecting-backstory-and-webex.md): Enabling the integration between Backstory and Webex
+- [Connecting Backstory and Google Meet](https://help.backstory.ai/en/articles/15252893-connecting-backstory-and-google-meet.md)
+- [Connecting Backstory and Slack](https://help.backstory.ai/en/articles/15252906-connecting-backstory-and-slack.md): Integrating Backstory with the Slack
+- [Setting up Microsoft Exchange On-Premises Team Access for Backstory](https://help.backstory.ai/en/articles/15657123-setting-up-microsoft-exchange-on-premises-team-access-for-backstory.md)
+- [SAML Setup with Okta](https://help.backstory.ai/en/articles/15252819-saml-setup-with-okta.md): Understand how to set up a SAML integration in Backstory using Okta as the identity provider.
+- [Configuring SAML with Okta](https://help.backstory.ai/en/articles/15252837-configuring-saml-with-okta.md)
+- [Common Security and Privacy Questions](https://help.backstory.ai/en/articles/15252889-common-security-and-privacy-questions.md): Common questions about how PeopleGlass handles security and privacy
+
+## API
+
+- [API Key Management](https://help.backstory.ai/en/articles/15252717-api-key-management.md)

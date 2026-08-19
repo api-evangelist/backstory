@@ -1,0 +1,52 @@
+generated: '2026-08-14'
+method: searched
+source: https://help.backstory.ai/en/articles/15252920-new-product-releases
+url: https://help.backstory.ai/en/articles/15252920-new-product-releases
+scheme: dated-product-release-notes
+cadence: monthly
+current_version: '2026-08'
+note: >-
+  Backstory keeps one rolling "New Product Releases" article in its help centre
+  rather than a versioned API changelog. It records product changes, not contract
+  changes, and only the current release is retained — there is no archive of
+  prior releases to harvest, so the window below is genuinely everything the
+  provider publishes.
+entries:
+- version: '2026-08'
+  date: '2026-08'
+  title: August 2026 release
+  breaking: []
+  additions:
+  - name: My Meetings (Beta)
+    detail: >-
+      In-app view of upcoming and past meetings, combining calendar meetings,
+      matched opportunities or accounts, participant details and Backstory's
+      AI-generated summary. Off by default; access via CSM request.
+  - name: Permission and Object Visibility Settings
+    detail: >-
+      Admins can separate access to configuration tools and team dashboards
+      (Permission settings) from whose account and opportunity data a user can
+      see (Object Visibility settings). This is the control that also governs
+      what an MCP-connected AI client can read.
+  - name: Forecast Submission Field Defaults
+    detail: >-
+      Administrators choose whether new forecast submissions pre-populate from
+      the latest rolled-up pipeline values or the user's previous submission.
+  - name: Pipeline Changes View
+    detail: >-
+      Waterfall Charts renamed to Pipeline Changes and opened to all Forecasting
+      users including sales representatives; previously manager-only.
+  - name: Weekly Forecast Trends Email (Beta)
+    detail: Opt-in weekly email showing how a recipient's forecast moved week over week.
+  - name: Fiscal Year View (Beta)
+    detail: Forecasts can display by fiscal year instead of by quarter.
+  changes:
+  - name: MCP Authentication Update
+    detail: >-
+      Backstory MCP no longer requires Salesforce credentials. Users authenticate
+      with their Backstory credentials, which makes the MCP server usable by
+      customers running a CRM other than Salesforce.
+    affects: mcp/backstory-mcp.yml
+related:
+  status_page: https://status.backstory.ai/
+  mcp_collection: https://help.backstory.ai/en/collections/19658946-mcp

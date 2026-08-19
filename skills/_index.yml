@@ -1,0 +1,27 @@
+generated: '2026-08-14'
+method: generated
+source: https://help.backstory.ai/en/articles/15252736-backstory-mcp
+grounding: >-
+  Backstory publishes no OpenAPI, so these skills are grounded in the provider's
+  own documented MCP tool names rather than in operationIds. Every tool named in
+  every skill appears verbatim in Backstory's "Backstory MCP" help-centre article;
+  none is invented. Input schemas are not published (the live tools/list is
+  OAuth-gated), so the skills instruct by tool name and plain-language argument,
+  never by fabricated parameter names.
+surface:
+  type: mcp
+  endpoint: https://mcp.people.ai/mcp
+  auth: oauth2 (authorization_code + PKCE) or PAI-Client-Id / PAI-Client-Secret headers
+skills:
+- file: backstory-account-brief.md
+  name: Brief me on an account before a call
+  api: mcp/backstory-mcp.yml
+  operations: [Find Account, Recent Account Activity, Engaged People, Account Company News, Account Status]
+- file: backstory-deal-risk-review.md
+  name: Review a deal for risk and qualification
+  api: mcp/backstory-mcp.yml
+  operations: [Top Records, Find Record by CRM ID, Recent Opportunity Activity, Scorecard, Opportunity Status, Ask Sales AI About Opportunity]
+- file: backstory-situation-precedent.md
+  name: Find how we handled this situation before
+  api: mcp/backstory-mcp.yml
+  operations: [Find Account, Recent Opportunity Activity, Situation Search, Ask Sales AI About Account]

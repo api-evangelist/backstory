@@ -1,0 +1,59 @@
+generated: '2026-08-14'
+method: searched
+source: https://status.backstory.ai/ and https://help.backstory.ai/en/articles/15252920-new-product-releases
+versioning:
+  scheme: none-published
+  current: null
+  note: >-
+    Backstory's MCP endpoint (https://mcp.people.ai/mcp) carries no version
+    segment, header or date pin, and the provider publishes no API versioning
+    policy. The one versioned artifact is the Salesforce managed package
+    (currently 4.16), which is packaged software rather than an API contract.
+  managed_package_version: '4.16'
+  managed_package_docs: https://help.backstory.ai/en/articles/15252916-backstory-salesforce-managed-package-overview
+deprecation:
+  policy_url: null
+  sunset_header: unknown
+  note: >-
+    No deprecation policy, sunset schedule, or RFC 8594 Sunset/Deprecation header
+    support is published. The closest published signal is a migration notice
+    telling existing customers to install the new Backstory managed package in
+    Salesforce, which announces an end-of-life for the prior package without
+    stating a general policy.
+  migration_notice: https://help.backstory.ai/en/articles/15589671-action-required-for-existing-customers-install-the-new-backstory-managed-package-in-salesforce
+  uninstall_guide: https://help.backstory.ai/en/articles/15657122-uninstalling-the-backstory-salesforce-managed-package
+sla:
+  url: null
+  uptime_target: null
+  note: >-
+    No public SLA or uptime target. Support hours are published (human support
+    Monday-Friday 09:00-17:00 Pacific; automated chat 24/7) with explicitly
+    non-committal response times — "prioritized based on urgency and business
+    impact".
+  support_policy: https://help.backstory.ai/en/articles/15252776-backstory-support-services
+status_page:
+  url: https://status.backstory.ai/
+  platform: Atlassian Statuspage
+  machine_readable: https://status.backstory.ai/api/v2/summary.json
+  components:
+  - Backstory Web-Application
+  - Backstory Analyze
+  - Salesforce Inbound Data Integration
+  - Salesforce Outbound Data Integration
+  - Data Warehouse
+  - Activity Intake APIs and Services
+  - Backstory Metrics Services
+  - SalesAI Services
+  observed:
+    fetched: '2026-08-14'
+    http_status: 200
+    indicator: none
+    description: All Systems Operational
+  note: >-
+    The status page does not list the MCP server as its own component; the
+    nearest covering components are SalesAI Services and Activity Intake APIs
+    and Services.
+change_log:
+  url: https://help.backstory.ai/en/articles/15252920-new-product-releases
+  detail: changelog/backstory-changelog.yml
+deprecated_operations: []

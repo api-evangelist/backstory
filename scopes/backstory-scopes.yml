@@ -1,0 +1,43 @@
+generated: '2026-08-14'
+method: probed
+source: https://mcp.backstory.ai/.well-known/oauth-authorization-server
+docs: null
+note: >-
+  Backstory publishes no OpenAPI and no scopes/permissions reference page, so
+  this file is read directly off the MCP server's RFC 8414 and RFC 9728
+  discovery documents (both HTTP 200, anonymous). Nothing here is inferred.
+schemes:
+- name: backstory-mcp-oauth2
+  source: https://mcp.backstory.ai/.well-known/oauth-authorization-server
+  issuer: https://mcp.backstory.ai/
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://mcp.backstory.ai/authorize
+    tokenUrl: https://mcp.backstory.ai/token
+    code_challenge_methods: [S256]
+scopes:
+- scope: claudeai
+  description: >-
+    The only scope advertised by the Backstory MCP authorization server, in both
+    its authorization-server metadata (scopes_supported) and its
+    protected-resource metadata for https://mcp.backstory.ai/mcp. It is a
+    connector-grant marker rather than a capability scope.
+  flows: [authorizationCode]
+  sources:
+  - https://mcp.backstory.ai/.well-known/oauth-authorization-server
+  - https://mcp.backstory.ai/.well-known/oauth-protected-resource/mcp
+scope_count: 1
+authorization_note: >-
+  Backstory does not express authorization as OAuth scopes. Per the provider's
+  MCP article, a connected client "can only access the same accounts,
+  opportunities, activities, and other sales data that you can already view in
+  Backstory Engagement Dashboards" — the effective permission set is the
+  authenticating user's own, administered through User Access / Object Visibility
+  settings, not through the token's scope string.
+x-evidence:
+- fetched: '2026-08-14'
+  url: https://mcp.backstory.ai/.well-known/oauth-authorization-server
+  http_status: 200
+- fetched: '2026-08-14'
+  url: https://mcp.backstory.ai/.well-known/oauth-protected-resource/mcp
+  http_status: 200

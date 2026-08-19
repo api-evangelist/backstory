@@ -1,0 +1,12 @@
+{
+    "resource": "https://mcp.backstory.ai/mcp",
+    "authorization_servers": [
+        "https://mcp.backstory.ai/"
+    ],
+    "scopes_supported": [
+        "claudeai"
+    ],
+    "bearer_methods_supported": [
+        "header"
+    ]
+}

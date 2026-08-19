@@ -1,0 +1,49 @@
+generated: '2026-08-14'
+method: searched
+source: https://help.backstory.ai/en/collections/19646764-integrations
+note: >-
+  Backstory ships no web-component or JS element library for third-party
+  developers. What it does ship are embedded product surfaces that render inside
+  the customer's own systems — Salesforce, Microsoft 365 and Slack — plus a
+  browser extension. Those are catalogued here because they are how Backstory's
+  UI actually reaches an end user; they are distinct from SDKs (see packages/).
+families:
+- family: salesforce-embedded
+  description: >-
+    UI delivered inside Salesforce by the Backstory managed package: Visualforce
+    pages and Lightning components placed on the "Your Backstory" app page for
+    Manager and Sales Rep, plus Closeplan links on records.
+  components:
+  - name: Visualforce pages
+    count: 4
+    source: https://help.backstory.ai/en/articles/15252916-backstory-salesforce-managed-package-overview
+  - name: Your Backstory app page (Manager / Sales Rep components)
+    source: https://help.backstory.ai/en/articles/15252725-creating-your-backstory-app-page-for-manager-and-sales-rep-components
+  - name: Closeplan links in Salesforce
+    source: https://help.backstory.ai/en/articles/15252746-add-closeplan-links-in-salesforce
+  - name: Sheets in Salesforce
+    source: https://help.backstory.ai/en/articles/15252885-add-sheets-to-salesforce
+  loader: Backstory Salesforce managed package v4.16 (namespace peopleai__)
+- family: browser
+  description: Chrome extension that pins the Backstory App to the browser homepage and new-tab page.
+  components:
+  - name: Backstory Chrome extension
+    id: nljldpdlijecbfkakgblhobklpiogmfg
+    url: https://chromewebstore.google.com/detail/backstory/nljldpdlijecbfkakgblhobklpiogmfg
+    source: https://help.backstory.ai/en/articles/16102063-install-the-backstory-chrome-extension
+- family: chat-and-collaboration
+  description: Surfaces embedded in messaging and meeting tools.
+  components:
+  - name: Slackbot for meeting categorization
+    source: https://help.backstory.ai/en/articles/15252737-slackbot-for-meeting-categorization
+  - name: Microsoft Teams integration
+    source: https://help.backstory.ai/en/articles/15252829-microsoft-teams-integration
+- family: agent-clients
+  description: >-
+    Not Backstory-authored UI, but the surfaces where Backstory data is rendered
+    to a user through MCP: Claude, ChatGPT, Microsoft Copilot, Gemini CLI and n8n
+    AI Agent nodes. Recorded for completeness; the contract is mcp/backstory-mcp.yml.
+  components:
+  - name: Backstory MCP connector
+    source: https://help.backstory.ai/en/collections/19658946-mcp
+component_count: 8

@@ -1,0 +1,87 @@
+generated: '2026-08-14'
+method: probed
+source: >-
+  live probes of https://mcp.people.ai/mcp and
+  https://mcp.backstory.ai/.well-known/*, plus the Backstory MCP help-centre
+  collection (https://help.backstory.ai/en/collections/19658946-mcp)
+scope: >-
+  Backstory's only public machine-callable surface is its MCP server. There is no
+  OpenAPI to derive REST conventions from, so this file records the cross-cutting
+  semantics that are actually observable or documented, and states plainly where
+  a convention is undocumented rather than guessing one.
+transport:
+  protocol: MCP (JSON-RPC 2.0 over Streamable HTTP)
+  endpoint: https://mcp.people.ai/mcp
+  method: POST
+  accept: application/json, text/event-stream
+  content_type: application/json
+  documented_client_protocol_label: StreamingHTTP
+  note: >-
+    Microsoft Copilot Studio and Gemini CLI setup docs use a trailing slash
+    (https://mcp.people.ai/mcp/); Claude, ChatGPT and n8n docs use no trailing
+    slash. Both forms answer.
+authentication:
+  style: OAuth 2.0 bearer (authorization_code + PKCE S256, dynamic client registration)
+  header: 'Authorization: Bearer <token>'
+  alternative: PAI-Client-Id / PAI-Client-Secret request headers (case-sensitive)
+  discovery: RFC 8414 + RFC 9728 metadata on the MCP host
+  detail: authentication/backstory-authentication.yml
+authorization:
+  model: caller-permission inheritance (no scope-based capability grants)
+  detail: scopes/backstory-scopes.yml
+error_envelope:
+  format: custom JSON object
+  rfc9457: false
+  content_type: application/json
+  fields:
+  - error
+  - error_description
+  - error_code
+  - error_reason
+  challenge_header: WWW-Authenticate (RFC 6750 Bearer, carrying resource_metadata)
+  observed_example: '{"error": "invalid_token", "error_description": "...", "error_code": "missing_credentials", "error_reason": "missing_authorization"}'
+  detail: errors/backstory-problem-types.yml
+idempotency:
+  supported: unknown
+  documented: false
+  note: >-
+    No idempotency key, header, or retry-safety contract is documented anywhere
+    in Backstory's help centre, and none could be observed without credentials.
+    Recorded as absent rather than asserted — no Idempotency pointer is emitted
+    for this provider.
+pagination:
+  documented: false
+  note: >-
+    Not documented. Two tools imply server-side result caps that a caller cannot
+    control ("Top Records" returns a ranked set; "Situation Search" returns up to
+    four matches), but no cursor, offset or page-size parameter is published.
+rate_limiting:
+  documented: false
+  detail: rate-limits/backstory-rate-limits.yml
+versioning:
+  scheme: none published for the MCP endpoint
+  note: >-
+    The endpoint is unversioned. Product changes are announced in the help
+    centre's "New Product Releases" article rather than through an API version
+    train.
+  detail: lifecycle/backstory-lifecycle.yml
+request_tracing:
+  documented: false
+  note: >-
+    No request-id or correlation header is documented. Support asks customers for
+    an "Activity ID" when filing issues, which is a product record identifier,
+    not an API trace id.
+data_freshness:
+  note: >-
+    ChatGPT and Gemini CLI setup articles both state the connection exposes
+    "30 days of communications" for an account.
+  sources:
+  - https://help.backstory.ai/en/articles/13781010-connect-chatgpt-to-backstory
+  - https://help.backstory.ai/en/articles/15252790-connect-gemini-cli-to-backstory
+cross_links:
+  authentication: authentication/backstory-authentication.yml
+  scopes: scopes/backstory-scopes.yml
+  errors: errors/backstory-problem-types.yml
+  lifecycle: lifecycle/backstory-lifecycle.yml
+  rate_limits: rate-limits/backstory-rate-limits.yml
+  mcp: mcp/backstory-mcp.yml

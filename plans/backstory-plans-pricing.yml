@@ -1,0 +1,54 @@
+generated: '2026-08-14'
+method: searched
+source: https://www.backstory.ai/pricing
+url: https://www.backstory.ai/pricing
+plan_count: 0
+pricing_model: consumption-plus-connected-people
+currency: null
+public_prices: false
+note: >-
+  Backstory publishes a pricing PAGE that explains its model in detail but names
+  no tiers and no numbers. There is nothing to enumerate as plans: pricing is
+  quote-only ("Request pricing" / "Get a quote tailored to your team"), so
+  plan_count is an honest zero rather than an omission.
+model:
+  billed_for:
+  - >-
+    Connected people whose customer activity powers the platform — reps, CS,
+    channel, anyone whose emails, calls and CRM data Backstory ingests. Each
+    connected person carries a pre-packaged consumption allotment that pools
+    across the organization.
+  - >-
+    Answers consumed — a deal summary, a risk surfaced, a question answered —
+    drawn from that pooled consumption. Anyone in the org can ask.
+  not_billed_for:
+  - Viewers (managers, finance, deal desk, ops) — unlimited, no seat required.
+  - Feature tiers — the provider states there are none; every customer gets the full product.
+  overage:
+    policy: True Forward
+    detail: >-
+      Usage above the pre-packaged consumption does not shut off and is not
+      back-billed for the current term; the contract is resized forward at
+      renewal.
+included_at_all_levels:
+- Unlimited viewers, no seats to buy
+- Full platform, no feature tiers
+- SOC 2 Type II
+- GDPR
+- SSO / SAML
+api_and_mcp_access:
+  note: >-
+    MCP access is not priced separately on the pricing page. The MCP articles
+    state it requires an active Backstory account with Data Foundation (and
+    SalesAI for the analysis tools), plus a paid plan on the client side (Claude
+    Pro/Team/Enterprise, ChatGPT Plus or higher, Copilot Studio Enterprise).
+    Programmatic PAI-Client-Id/Secret credentials are issued by a Backstory
+    administrator or CSM on request, not self-service.
+  sources:
+  - https://help.backstory.ai/en/articles/15252736-backstory-mcp
+  - https://help.backstory.ai/en/articles/15252917-connect-n8n-to-backstory
+plans: []
+x-evidence:
+- fetched: '2026-08-14'
+  url: https://www.backstory.ai/pricing
+  http_status: 200

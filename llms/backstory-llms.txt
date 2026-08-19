@@ -2,22 +2,78 @@
 
 > Backstory is an AI revenue intelligence platform for sales leaders, CROs, and revenue teams. It automatically captures customer interactions across email, meetings, calls, chat, and CRM, maps that activity to open deals, and answers the questions revenue leaders actually ask — which deals are real, which are at risk, and what to do next. Rebranded from People.ai in April 2026. Backed by ICONIQ Capital, Andreessen Horowitz, and Lightspeed Venture Partners.
 
-Note: A verbatim full-content export is published at https://www.backstory.ai/llms.txt (~2.4 MB). This file is a curated summary. Backstory does not currently publish a public developer/API surface; the product API is enterprise/partner gated behind app.people.ai. The company has stated a vision of "open APIs and MCP" integration — revisit for a real developer surface.
+Note: Backstory serves two llms.txt files of its own. https://help.backstory.ai/llms.txt is a proper llms.txt index of the help centre (~26 KB, 155 articles) and is saved verbatim alongside this file as `backstory-help-llms.txt`. https://www.backstory.ai/llms.txt is a verbatim full-content export of the marketing site (~2.4 MB, still People.ai-branded) and is not committed. This file is a curated summary maintained by API Evangelist. Last verified 2026-08-14.
+
+## Agent surface
+
+Backstory ships a hosted, remote MCP server. It is the company's only public machine-callable surface — there is no published OpenAPI, GraphQL SDL, AsyncAPI, or A2A agent card on any Backstory or People.ai host.
+
+- MCP endpoint: https://mcp.people.ai/mcp (canonical protected resource: https://mcp.backstory.ai/mcp)
+- Transport: JSON-RPC over Streamable HTTP
+- Auth: OAuth 2.0 authorization_code + PKCE (S256), dynamic client registration; or PAI-Client-Id / PAI-Client-Secret request headers for programmatic clients
+- Authorization server metadata: https://mcp.backstory.ai/.well-known/oauth-authorization-server
+- Protected resource metadata: https://mcp.backstory.ai/.well-known/oauth-protected-resource/mcp
+- Permissions: a connected client sees exactly the records the authenticating user can already see in Backstory Engagement Dashboards; no elevated access
+- MCP overview: https://help.backstory.ai/en/articles/15252736-backstory-mcp
+- MCP marketing page: https://www.backstory.ai/platform/mcp
+
+### Client setup
+- Claude: https://help.backstory.ai/en/articles/15252710-connect-claude-to-backstory
+- ChatGPT: https://help.backstory.ai/en/articles/13781010-connect-chatgpt-to-backstory
+- Microsoft Copilot: https://help.backstory.ai/en/articles/15252744-connect-microsoft-copilot-to-backstory
+- Gemini CLI: https://help.backstory.ai/en/articles/15252790-connect-gemini-cli-to-backstory
+- n8n: https://help.backstory.ai/en/articles/15252917-connect-n8n-to-backstory
+
+### Tools (13, as published by Backstory)
+- Find Account — search for an account, return matching records, opportunities and related CRM data
+- Find Record by CRM ID — resolve a CRM record id to an account or opportunity
+- Top Records — the accounts and opportunities ranked highest by engagement and admin prioritization
+- Account Status — summary of risks, sentiment, key topics and recommended next steps
+- Opportunity Status — deal-level summary of risks, momentum and suggested actions
+- Scorecard — retrieve Closeplan / qualification scorecards, questions and answers
+- Recent Account Activity — recent emails and meetings on the account
+- Recent Opportunity Activity — communications and meetings on a specific opportunity
+- Engaged People — internal and external contacts in recent communications
+- Account Company News — earnings calls, SEC filings and public company reporting
+- Ask Sales AI About Account — account-level analysis over CRM data, activity, engagement and scorecards
+- Ask Sales AI About Opportunity — opportunity-level analysis over full deal context
+- Situation Search (beta) — up to four historically similar deals, with actions taken and outcomes
+
+## REST API
+
+A Backstory REST API exists but is not publicly documented. Administrators generate, pause and revoke up to five API key/secret pairs in the Backstory Admin Panel; no base URL, reference, or specification is published.
+- API key management: https://help.backstory.ai/en/articles/15252717-api-key-management
 
 ## Company
 - Website: https://www.backstory.ai/
 - Newsroom: https://www.backstory.ai/newsroom
 - Rebrand announcement: https://www.backstory.ai/newsroom/people-ai-becomes-backstory-redefining-how-revenue-teams-get-answers-about-their-deals
+- Pricing: https://www.backstory.ai/pricing (consumption-based, quote-only, no published tiers)
+- Terms: https://www.backstory.ai/terms
 - Sign in: https://app.people.ai/login/
 - Book a demo: https://www.backstory.ai/get-demo
+- GitHub: https://github.com/people-ai
+
+## Operations
+- Help centre: https://help.backstory.ai/en/
+- Status page: https://status.backstory.ai/ (Atlassian Statuspage; JSON at /api/v2/summary.json)
+- Release notes: https://help.backstory.ai/en/articles/15252920-new-product-releases
+- Support: support@backstory.ai — human support Mon–Fri 09:00–17:00 Pacific, automated chat 24/7
 
 ## Trust & Security
 - Trust & Security: https://www.backstory.ai/platform/trust-security
 - Privacy Policy: https://www.backstory.ai/privacy
 - Sub-processors: https://www.backstory.ai/product/sub-processors
-- Certifications: SOC 2, ISO 27001, ISO 27017, GDPR, CSA STAR
-- Security contact: security@backstory.ai
+- Certifications: SOC 2 Type II, ISO 27001, ISO 27017, GDPR, CSA STAR
+- AI commitments: customer data never trains base models; outputs scoped to tenant; PII stripped before data reaches model providers; AI features disablable per tenant
+- No security.txt is published on any Backstory host.
+
+## Distributed software
+- Salesforce managed package v4.16: https://help.backstory.ai/en/articles/15252916-backstory-salesforce-managed-package-overview
+- Chrome extension: https://chromewebstore.google.com/detail/backstory/nljldpdlijecbfkakgblhobklpiogmfg
+- No first-party API client SDK is published in any language registry.
 
 ## Integrations (product, not developer API)
-- CRM: Salesforce, Microsoft Dynamics, Oracle
-- Communication: Gmail, Outlook, Zoom, Microsoft Teams, Slack
+- CRM: Salesforce, Microsoft Dynamics, Oracle Sales Cloud
+- Communication: Gmail / Google Workspace, Microsoft 365 / Outlook, Zoom, Microsoft Teams, Webex, Google Meet, Slack
+- Revenue tooling: Gong, LinkedIn Sales Navigator, ZoomInfo, 6sense, cadence tools

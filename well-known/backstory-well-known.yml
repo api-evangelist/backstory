@@ -1,20 +1,172 @@
-generated: '2026-07-18'
+generated: '2026-08-14'
 method: searched
-source: live probes of https://www.backstory.ai/.well-known/*
-host: https://www.backstory.ai
-documents:
-- path: /.well-known/security.txt
-  status: 404
-- path: /.well-known/openid-configuration
-  status: 404
-- path: /.well-known/oauth-authorization-server
-  status: 404
-- path: /.well-known/api-catalog
-  status: 404
-- path: /.well-known/ai-plugin.json
-  status: 404
+source: live probes of /.well-known/* on every Backstory / People.ai host
+supersedes: '2026-07-18 probe (marketing host only, all 404)'
+hosts:
+- host: https://mcp.backstory.ai
+  role: MCP server (canonical protected resource)
+  documents:
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    content_type: application/json
+    spec: RFC 8414 OAuth 2.0 Authorization Server Metadata
+    file: backstory-oauth-authorization-server.json
+  - path: /.well-known/oauth-protected-resource/mcp
+    status: 200
+    content_type: application/json
+    spec: RFC 9728 OAuth 2.0 Protected Resource Metadata
+    file: backstory-oauth-protected-resource.json
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: https://mcp.people.ai
+  role: MCP server (the endpoint the setup docs tell clients to enter)
+  documents:
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    content_type: application/json
+    note: byte-identical to mcp.backstory.ai; same deployment, issuer is mcp.backstory.ai
+  - path: /.well-known/oauth-protected-resource/mcp
+    status: 200
+    content_type: application/json
+    note: byte-identical to mcp.backstory.ai
+- host: https://www.backstory.ai
+  role: marketing site (Webflow)
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: https://app.people.ai
+  role: product application (login)
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: https://api.backstory.ai
+  role: API host (nginx; every probed path 404 without credentials)
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: https://api.people.ai
+  role: API host (nginx; every probed path 404 without credentials)
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: https://app.backstory.ai
+  role: product application (single-page app)
+  documents:
+  - path: /.well-known/agent-card.json
+    status: 200
+    content_type: text/html
+    file: null
+    note: >-
+      FALSE POSITIVE, rejected. This host is an SPA catch-all: every path,
+      including /.well-known/agent.json, /.well-known/security.txt,
+      /openapi.json and /llms.txt, returns HTTP 200 with the same HTML shell. No
+      document exists at any of them and no pointer is emitted.
+  - path: /.well-known/agent.json
+    status: 200
+    content_type: text/html
+    file: null
+    note: same SPA catch-all shell; rejected
+- host: https://help.backstory.ai
+  role: help centre (Intercom-hosted)
+  documents:
+  - path: /llms.txt
+    status: 200
+    content_type: text/plain
+    file: ../llms/backstory-help-llms.txt
+    note: >-
+      A real, Backstory-branded llms.txt index of 155 help-centre articles
+      (~26 KB), saved verbatim under llms/.
+  - path: /.well-known/security.txt
+    status: 200
+    content_type: text/plain
+    claimed_by: Intercom
+    file: null
+    note: >-
+      NOT counted as a Backstory document — the body is Intercom's own
+      vulnerability-reporting policy, served by the help-centre platform.
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /openapi.json
+    status: 404
+- host: https://status.backstory.ai
+  role: Atlassian Statuspage (third-party vendor host on a Backstory subdomain)
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    content_type: text/plain
+    claimed_by: Atlassian
+    file: null
+    note: >-
+      NOT saved and NOT counted as a Backstory document. The body is Atlassian's
+      own PGP-signed security.txt (Contact https://www.atlassian.com/trust/...)
+      served by the Statuspage platform, not a policy Backstory authored. No
+      SecurityTxt pointer is emitted for it.
 notes: >-
-  No /.well-known discovery documents are published on the marketing host.
-  A /llms.txt is served (HTTP 200) and captured under llms/. Backstory has no
-  public developer/API surface at this time (product API is enterprise/partner
-  gated behind app.people.ai); revisit when an agent/MCP surface ships.
+  Backstory serves real /.well-known discovery documents, but only on its MCP
+  host: RFC 8414 authorization-server metadata and RFC 9728 protected-resource
+  metadata, both HTTP 200 with real JSON. The marketing, app and API hosts serve
+  nothing. No security.txt authored by Backstory, no api-catalog, no OIDC
+  discovery, and no A2A agent card at either the canonical
+  /.well-known/agent-card.json or the legacy /.well-known/agent.json on any host.

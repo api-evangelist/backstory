@@ -1,0 +1,53 @@
+generated: '2026-08-14'
+method: searched
+source: https://help.backstory.ai/en/collections/19658946-mcp
+limit_count: 0
+note: >-
+  Backstory publishes no rate limits. Every MCP client-setup article, the MCP
+  overview, the API Key Management article and the pricing page were read; none
+  names a request ceiling, a window, a burst allowance, a 429 behaviour or any
+  RateLimit-* / X-RateLimit-* / Retry-After response header. Live probing could
+  not observe headers either, because the only reachable endpoint answers 401
+  before any quota is evaluated. An honest zero, not an unchecked field.
+limits: []
+response_headers:
+  observed: []
+  documented: []
+  exhaustion_status: unknown
+adjacent_quotas:
+- name: API key pairs per organization
+  limit: 5
+  scope: per-organization
+  kind: resource-count
+  detail: >-
+    A Backstory administrator may hold at most five active API key/secret pairs
+    at a time in the Admin Panel. This is a credential quota, not a request rate
+    limit, and is recorded here only so it is not mistaken for one.
+  source: https://help.backstory.ai/en/articles/15252717-api-key-management
+- name: Consumption allotment
+  limit: null
+  scope: per-organization
+  kind: commercial-quota
+  detail: >-
+    Pricing is consumption-based: each connected person carries a pre-packaged
+    allotment of "answers" that pools across the org. Exceeding it does not cut
+    service off ("True Forward" — nothing shuts off, nothing is back-billed); the
+    contract is resized at renewal. Commercial metering, not API throttling, and
+    no numbers are published.
+  source: https://www.backstory.ai/pricing
+- name: Activity lookback window
+  limit: 30 days
+  scope: per-request
+  kind: data-window
+  detail: >-
+    The ChatGPT and Gemini CLI setup articles both state a connected client can
+    access "30 days of communications" for an account. A data-scope bound rather
+    than a rate limit.
+  sources:
+  - https://help.backstory.ai/en/articles/13781010-connect-chatgpt-to-backstory
+  - https://help.backstory.ai/en/articles/15252790-connect-gemini-cli-to-backstory
+x-evidence:
+- fetched: '2026-08-14'
+  url: https://mcp.people.ai/mcp
+  http_status: 401
+  note: no rate-limit headers present on the anonymous challenge response

@@ -1,0 +1,79 @@
+generated: '2026-08-14'
+method: searched
+source: >-
+  npm registry search + registry.npmjs.org metadata, Chrome Web Store listing,
+  Backstory help centre (Salesforce managed package), GitHub org api.github.com/orgs/people-ai
+note: >-
+  Backstory ships NO first-party API client SDK in any language. npm, PyPI,
+  RubyGems, crates.io, NuGet, Maven Central and pkg.go.dev were all checked for
+  backstory / backstory-ai / people-ai / peopleai; nothing first-party exists.
+  The company's GitHub org (github.com/people-ai) holds 27 repositories, all of
+  them infrastructure forks (checkov, kube2iam, riak clients, tfenv) plus a
+  Google Meet Chrome extension — no client library for Backstory's own API. What
+  the provider does distribute is packaged product software: a Salesforce managed
+  package and a Chrome extension. Those are catalogued below and are NOT counted
+  as SDKs, so no `SDKs` pointer is emitted for this provider.
+packages:
+- name: Backstory Salesforce Managed Package
+  language: apex
+  registry: salesforce-appexchange
+  official: true
+  version: '4.16'
+  published: null
+  url: https://login.salesforce.com/packaging/installPackage.apexp?p0=04tHp000001rZb6
+  docs: https://help.backstory.ai/en/articles/15252916-backstory-salesforce-managed-package-overview
+  install: Install package 04tHp000001rZb6 into a Salesforce sandbox, then production.
+  contents: >-
+    Custom fields on Activity (12), Account (11), Opportunity (12), Opportunity
+    Contact Role (1), Contact (19) and Lead (11); 1 custom object; 3 Apex
+    triggers; 1 permission set; 1 report folder with 3 reports; 4 Visualforce
+    pages. Fields are namespaced `peopleai__*`.
+  note: >-
+    Version 4.16 is the version the provider's own overview article names as
+    current. Salesforce packaging endpoints publish no release date for an
+    unlisted package, so `published` is null — checked, nothing datable, not a
+    guess. Existing customers are being migrated to this package from the prior
+    one.
+- name: Backstory (Chrome extension)
+  language: javascript
+  registry: chrome-web-store
+  official: true
+  version: null
+  published: '2026-04-23'
+  url: https://chromewebstore.google.com/detail/backstory/nljldpdlijecbfkakgblhobklpiogmfg
+  extension_id: nljldpdlijecbfkakgblhobklpiogmfg
+  offered_by: People.ai, Inc
+  docs: https://help.backstory.ai/en/articles/16102063-install-the-backstory-chrome-extension
+  install: Add from the Chrome Web Store.
+  note: >-
+    Sets the Backstory App as the browser homepage and new-tab page; it adds no
+    API surface. `published` is the store's own "Updated" date (April 23, 2026).
+    The Chrome Web Store item page no longer exposes a version string, so
+    `version` is null — checked, not recorded by the distributor.
+- name: n8n-nodes-backstory
+  language: javascript
+  registry: npm
+  official: false
+  version: 0.1.1
+  published: '2026-06-05'
+  url: https://www.npmjs.com/package/n8n-nodes-backstory
+  install: npm install n8n-nodes-backstory
+  description: >-
+    n8n community node for Backstory (formerly People.ai) — accounts,
+    opportunities, activities, SalesAI and forecasting.
+  note: >-
+    Community, not first-party. npm maintainer `progeorgek` / author "George
+    Kozlov" with an @clickup.com address and a non-Backstory git remote
+    (Mindollary). Backstory's own n8n instructions tell users to configure the
+    generic MCP Client node against https://mcp.people.ai/mcp and never mention
+    this package. Marked official:false until the provider claims it.
+counts:
+  total: 3
+  official: 2
+  official_sdks: 0
+registries_checked:
+- {registry: npm, queries: [backstory, backstory-ai, people.ai, peopleai], first_party_hits: 0}
+- {registry: pypi, queries: [backstory, backstory-ai, people-ai, peopleai], hits: 0}
+- {registry: chrome-web-store, hits: 1}
+- {registry: salesforce-appexchange, hits: 1}
+- {registry: github, org: people-ai, note: '27 repos, all infrastructure forks; no client SDK'}
