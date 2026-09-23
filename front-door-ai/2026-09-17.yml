@@ -1,0 +1,35 @@
+# Front Door AI Index — backstory — 2026-09-17
+# AI vocabulary counted on the provider's root page. Generated; do not edit.
+# `score` is null unless ownership is `own` — see front_door_ai.py.
+front_door_ai:
+  slug: backstory
+  lexicon_version: '1.0'
+  probed_at: '2026-09-17'
+  host: www.backstory.ai
+  final_host: www.backstory.ai
+  ownership: own
+  owner: backstory
+  shares_host_with: null
+  inherited_from: null
+  verdict: scored
+  score: 35
+  host_score: 35
+  density: 13.45
+  words: 2602
+  tiers:
+    agentic: 2
+    core: 28
+    model: 5
+  ambiguous: 6
+  top_terms:
+    AI: 25
+    LLMs: 3
+    ChatGPT: 2
+    Claude: 2
+    intelligence: 2
+    smart: 2
+    Gemini: 1
+    MCP: 1
+    agent: 1
+    automation: 1
+    copilot: 1
