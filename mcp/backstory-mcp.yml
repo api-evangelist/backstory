@@ -172,3 +172,18 @@ notes: No OpenAPI, GraphQL SDL, AsyncAPI or A2A agent card was found for Backsto
   (see well-known/backstory-well-known.yml). MCP is currently the provider's only machine-callable public
   surface; the separate Backstory REST API exists but is documented only as admin-panel API key/secret
   management, with no published reference or base URL.
+rfc9728:
+  endpoint: https://mcp.people.ai/mcp
+  metadata_url: https://mcp.backstory.ai/.well-known/oauth-protected-resource/mcp
+  discovered_via: WWW-Authenticate resource_metadata on an anonymous POST initialize
+  fetched: '2026-09-25'
+  http_status: 200
+  content_type: application/json
+  document:
+    resource: https://mcp.backstory.ai/mcp
+    authorization_servers:
+    - https://mcp.backstory.ai/
+    scopes_supported:
+    - claudeai
+    bearer_methods_supported:
+    - header
