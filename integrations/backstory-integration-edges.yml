@@ -1,16 +1,32 @@
 generated: '2026-10-12'
-method: none
+method: searched
 source:
 - https://zapier.com/apps/backstory/integrations
 - https://n8n.io/integrations/backstory/
 - https://composio.dev/toolkits/backstory
 - https://monid.ai/tools/backstory
 checked:
+- https://aws.amazon.com/marketplace/
 - https://composio.dev/toolkits/backstory
 - https://monid.ai/tools/backstory
 - https://n8n.io/integrations/backstory/
 - https://zapier.com/apps/backstory/integrations
 summary: null
 marketplace_apps: []
-edges: []
+edges:
+- partner_name: AWS Marketplace
+  partner: amazon-web-services
+  partner_match: aggregator
+  type: marketplace
+  marketplace: aws-marketplace
+  channel: distribution
+  relationship: platform-app
+  direction: provider-built
+  evidence: https://aws.amazon.com/marketplace/seller-profile?id=seller-jdfw3wt4zgfe6
+  listing_count: 1
+  apps:
+  - Backstory Revenue Answers Platform
+  seller_name: Backstory
+  detected_by: sweep-cloud-marketplaces.py
+  detected: '2026-10-13'
 templates: []
