@@ -64,6 +64,122 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Backstory is a company surfaced as a portfolio company of iconiq-capital and added to the API Evangelist network as a stub for enrichment. Sector: ai. This profile is a lead awaiting the enrichment pipeline.
+Backstory (formerly People.ai, rebranded April 2026) is an AI revenue intelligence platform for sales leaders, CROs, and revenue teams. It automatically captures customer interactions across email, meetings, calls, chat, and CRM records, maps that activity to open deals, and reconstructs what is actually happening inside a deal or account — flagging which deals are losing momentum, where decision-makers are missing, whether a forecast is defensible, and the recommended next step. It integrates with Salesforce, Microsoft Dynamics, Oracle, Gmail, Outlook, Zoom, Teams, Webex, and Slack without requiring reps to change their workflow. Backstory's public developer surface is agent-native rather than REST: it operates a hosted, remote MCP server at https://mcp.people.ai/mcp with thirteen documented tools, protected by OAuth 2.0 with PKCE and dynamic client registration, and documented for Claude, ChatGPT, Microsoft Copilot, Gemini CLI and n8n. A separate REST API exists but is documented only as admin-panel API key management, with no published reference or specification. Backstory is backed by ICONIQ Capital, Andreessen Horowitz, and Lightspeed Venture Partners.
 
-Backed by: iconiq-capital — https://www.backstory.ai/
+**Areas:** Company · Artificial Intelligence · Revenue Intelligence · Sales · CRM · Sales Analytics · Forecasting · Revenue Operations · MCP · AI Agents
+
+## Backstory on APIs.io
+
+Everything profiled for Backstory is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/backstory/](https://apis.io/providers/backstory/)** — or go straight to one of the APIs or properties below.
+
+### APIs (1)
+
+- [Backstory MCP](https://apis.io/apis/backstory/backstory-mcp/) — Backstory's hosted, remote Model Context Protocol server. It lets an AI client query a customer's own Backstory revenue-intelligence data — accounts,…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [backstory-mcp](https://apis.io/servers/backstory/backstory-mcp/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Backstory Authentication](https://apis.io/security/backstory/backstory-authentication/)
+- [Backstory Domain Security](https://apis.io/security/backstory/backstory-domain-security/)
+- [Backstory Trust Center](https://apis.io/security/backstory/backstory-trust-center/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Backstory Scopes](https://apis.io/scopes/backstory/backstory-scopes/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Backstory Plans Pricing](https://apis.io/plans/backstory/backstory-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Backstory Rate Limits](https://apis.io/rate-limits/backstory/backstory-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.backstory.ai/)
+- [Documentation](https://help.backstory.ai/en/)
+- [Getting started](https://help.backstory.ai/en/collections/19646748-get-started)
+- [Pricing](https://www.backstory.ai/pricing)
+- [Changelog](https://help.backstory.ai/en/articles/15252920-new-product-releases)
+- [Blog](https://www.backstory.ai/newsroom)
+- [Compliance](https://www.backstory.ai/platform/trust-security)
+- [Trust centre](https://www.backstory.ai/platform/trust-security)
+- [Terms of service](https://www.backstory.ai/terms)
+- [Privacy policy](https://www.backstory.ai/privacy)
+- [GitHub](https://github.com/people-ai)
+- [Status](https://status.backstory.ai/)
+
+## API Evangelist rating
+
+**Kin Score 36.6** — thin · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 75.0 |
+| Contract quality | 0.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 34.2 |
+| Developer ergonomics | 42.3 |
+| Access clarity | 53.9 |
+
+**Agent readiness 33.6** — agent-ready
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | verified |
+| Auth Clarity | served (partial credit) |
+| Idempotency | — |
+| Error Semantics | documented (partial credit) |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | served (partial credit) |
+| Protected Resource Metadata | verified |
+| Dynamic Client Registration | yes |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | na |
+
+**Regulatory alignment 36.4** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/backstory/](https://apis.io/providers/backstory/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Backstory: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/backstory/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
